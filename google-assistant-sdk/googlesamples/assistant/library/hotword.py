@@ -21,8 +21,8 @@ import json
 import os.path
 import pathlib2 as pathlib
 
-#import google.oauth2.credentials
-import google.oauth.credentials
+import google.oauth2.credentials
+#import google.oauth.credentials
 
 from google.assistant.library import Assistant
 from google.assistant.library.event import EventType
