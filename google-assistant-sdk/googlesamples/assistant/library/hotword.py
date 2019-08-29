@@ -67,19 +67,10 @@ def process_event(event):
         print()
     if event.type == EventType.ON_DEVICE_ACTION:
         for command, params in event.actions:
-            #print('Do command', command, 'with params', str(params))
             if command == "action.devices.commands.OnOff":
                 if params['on']:
-                    print('---------------')
-                    print('Led turned on')
-                    print('---------------')
-
                     GPIO.output(40, GPIO.HIGH)
                 else:
-                    print('---------------')
-                    print('Led turned off')
-                    print('---------------')
-
                     GPIO.output(40, GPIO.LOW)
 
 
@@ -168,6 +159,8 @@ def main():
             if event.type == EventType.ON_START_FINISHED and args.query:
                 assistant.send_text_query(args.query)
 
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setup(40, GPIO.OUT, initial=GPIO.LOW)
             process_event(event)
 
 
