@@ -70,8 +70,10 @@ def process_event(event):
         for command, params in event.actions:
             if command == "action.devices.commands.OnOff":
                 if params['on']:
+                    print('Led turned on')
                     GPIO.output(40, GPIO.HIGH)
                 else:
+                    print('Led turned off')
                     GPIO.output(40, GPIO.LOW)
 
 
