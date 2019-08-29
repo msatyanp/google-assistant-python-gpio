@@ -71,10 +71,10 @@ def process_event(event):
             if command == "action.devices.commands.OnOff":
                 if params['on']:
                     print('Led turned on')
-                    GPIO.output(40, GPIO.HIGH)
+                    GPIO.output(26, GPIO.HIGH)
                 else:
                     print('Led turned off')
-                    GPIO.output(40, GPIO.LOW)
+                    GPIO.output(26, GPIO.LOW)
 
 
 def main():
@@ -163,7 +163,7 @@ def main():
                 assistant.send_text_query(args.query)
 
             GPIO.setmode(GPIO.BCM)
-            GPIO.setup(40, GPIO.OUT, initial=GPIO.LOW)
+            GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW)
             process_event(event)
 
 
