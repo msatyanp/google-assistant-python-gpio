@@ -33,6 +33,8 @@ import faulthandler
 faulthandler.enable()
 
 import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW)
 
 try:
     FileNotFoundError
@@ -162,8 +164,7 @@ def main():
             if event.type == EventType.ON_START_FINISHED and args.query:
                 assistant.send_text_query(args.query)
 
-            GPIO.setmode(GPIO.BCM)
-            GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW)
+
             process_event(event)
 
 
