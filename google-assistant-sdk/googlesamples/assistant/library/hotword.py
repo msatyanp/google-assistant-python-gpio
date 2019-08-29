@@ -71,16 +71,16 @@ def process_event(event):
             if command == "action.devices.commands.OnOff":
                 if params['on']:
                     print('---------------')
-                        print('Led turned on')
+                    print('Led turned on')
                     print('---------------')
 
-                        GPIO.output(40, GPIO.HIGH)
+                    GPIO.output(40, GPIO.HIGH)
                 else:
-                        print('---------------')
-                            print('Led turned off')
-                        print('---------------')
+                    print('---------------')
+                    print('Led turned off')
+                    print('---------------')
 
-                            GPIO.output(40, GPIO.LOW)
+                    GPIO.output(40, GPIO.LOW)
 
 
 def main():
